@@ -1,0 +1,234 @@
+@mixin flexCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.BeerPage {
+	background-color: #1e6d74;
+	font-size: 2rem;
+	width: 100%;
+	min-height: 100%;
+	& .HeroName {
+		font-size: 3vw;
+	}
+	& .info {
+		@include flexCenter;
+		background-color: #1e6d74;
+		position: relative;
+		align-items: normal;
+	}
+	& .linkTitle {
+		background-color: #bf3730;
+		text-align: center;
+		padding: 1vh 0;
+		& .homeLink {
+			@include flexCenter;
+			background-color: #fff;
+			font-size: 1.3rem;
+			position: fixed;
+			width: 5.6vw;
+			height: 5.6vw;
+			left: 2vh;
+			top: 2vh;
+			z-index: 3;
+			border: 0.2vw solid black;
+			border-radius: 50%;
+			transition: background-color 0.2s;
+			&:hover {
+				background-color: #ffc140;
+				transition: background-color 0.2s;
+			}
+		}
+	}
+
+	& .image {
+		height: 93.2vh;
+		object-fit: contain;
+		border-bottom: 0.5vw solid black;
+	}
+	& .mainInfo {
+		background-color: #35c0cd;
+		width: 100%;
+		height: 55vh;
+		font-size: 1.8rem;
+		padding: 1.5vh 1.1vw;
+		@include flexCenter;
+		text-align: center;
+		border-bottom: 0.5vw solid black;
+		justify-content: space-around;
+		& .beerName {
+			border-bottom: 1vh solid #ffc140;
+			padding: 1.2vh 2vw;
+			color: #dd1106;
+			font-size: 5vw;
+			margin-bottom: 3vh;
+		}
+		& .tagline {
+			letter-spacing: 0.1vw;
+			position: absolute;
+			top: 35vh;
+			max-width: 30vw;
+			z-index: 3;
+			right: 2vw;
+			font-size: 2.4rem;
+			color: #fff;
+			border-bottom: 0.7vh double #ffc140;
+			padding: 2vh 0;
+			background-color: #5ec4cd;
+		}
+		& .firstBrewed {
+			padding: 1.2vh 2vw;
+			border-bottom: 1vh solid #ffc140;
+			margin-bottom: 3vh;
+		}
+	}
+
+	& .abvPhSrm {
+		@include flexCenter;
+		border-bottom: 0.5vw solid black;
+		justify-content: space-around;
+		text-align: center;
+		flex-direction: row;
+		gap: 2vh;
+		padding: 1.2vw;
+		z-index: 5;
+		background-color: white;
+		top: 0;
+		& h3 {
+			margin-bottom: 1vw;
+			font-size: 1.5rem;
+		}
+		& p {
+			border: 0.2vw solid black;
+			@include flexCenter;
+			width: 5rem;
+			height: 5rem;
+			font-size: 2.1rem;
+			border-radius: 50%;
+			box-shadow: 0px 5px 10px #000000c0;
+			transition: all 0.25s;
+		}
+		& p:hover {
+			transform: scale(1.1);
+			user-select: none;
+		}
+		& .abv p {
+			background-color: #ffc140;
+		}
+		& .ph p {
+			background-color: #1596e0e0;
+		}
+		& .srm p {
+			background-color: #6d19b1a8;
+		}
+	}
+	& .desc {
+		background-color: #ffc140;
+		padding: 4vh 3vw;
+		width: 100%;
+		border-bottom: 0.5vw solid black;
+		& h3 {
+			margin-bottom: 2vh;
+			font-size: 4rem;
+		}
+		& p {
+			font-size: 1.6rem;
+			text-wrap: wrap;
+			letter-spacing: 0.2vh;
+		}
+	}
+	& .foodPairing {
+		background-color: #5ec4cd;
+		padding: 2vh 5vw;
+		text-align: right;
+		border-bottom: 0.5vw solid black;
+		& h3 {
+			margin: 0 6vw 2vh 0;
+			font-size: 3.6rem;
+			z-index: 3;
+			color: #ffad00;
+			text-shadow: 0 0 0.5vh #000;
+		}
+		& ul {
+			& li {
+				@include flexCenter;
+				flex-direction: row;
+				padding: 1.2vw;
+				gap: 2vh;
+				background-color: #2a8e97;
+				margin-bottom: 8vh;
+				z-index: 1;
+				color: #ffffffce;
+				font-weight: bold;
+				position: relative;
+				font-size: 2.5rem;
+			}
+			& li:nth-child(2) {
+				background-color: #2e9aa4;
+				color: #c50d04;
+			}
+			& li:nth-child(3) {
+				background-color: #35acb7;
+				color: #ffffffce;
+			}
+		}
+	}
+	.recipe {
+		@include flexCenter;
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 2vh 2vw;
+		background-color: #ffad00;
+		& ul {
+			list-style-type: '';
+			& li {
+				margin-bottom: 2vh;
+				padding-left: 3vw;
+			}
+		}
+		& h5 {
+			font-size: 2.1rem;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		& .linkTitle .homeLink {
+			font-size: 1.2rem;
+			width: 10vh;
+			height: 10vh;
+			top: 7%;
+		}
+		& .HeroName {
+			font-size: 1.6rem;
+		}
+		& .mainInfo {
+			& .beerName {
+				font-size: 2rem;
+			}
+			& .tagline {
+				max-width: 30vh;
+				right: 10%;
+			}
+		}
+		& li {
+			font-size: 1.3rem;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		& .linkTitle .homeLink {
+			font-size: 1.6rem;
+			width: 8vh;
+			height: 8vh;
+			top: 5%;
+		}
+	}
+}
+.homeLink {
+	position: fixed;
+	left: 0;
+	&:hover {
+		background-color: #b8b8b8;
+		transition: all 0.25s;
+	}
+}

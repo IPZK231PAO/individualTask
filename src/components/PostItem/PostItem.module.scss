@@ -1,0 +1,91 @@
+.PostItem {
+	width: 70%;
+	border: 0.3vw solid orange;
+	border-radius: 14px;
+	align-items: center;
+	display: flex;
+	position: relative;
+	transition: all 0.25s;
+	*.icon {
+		max-width: 10%;
+		object-fit: contain;
+	}
+	& p {
+		padding: 0.5vw;
+	}
+	& img {
+		max-height: 100%;
+	}
+	& a {
+		display: flex;
+		max-height: 26vh;
+		padding: 2vw;
+		gap: 2vh;
+		width: 100%;
+		transition: all 0.25s;
+		& div {
+			background-color: rgba(0, 0, 0, 0.165);
+			border-radius: 12px;
+			font-size: 1.4rem;
+			border: 0.2vw solid #000;
+			width: 100%;
+			padding: 1.5vh 1.6vw 1.5vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			transition: width 0.2s, background-color 0.2s;
+		}
+		@media screen and (max-width: 600px) {
+			& div {
+				font-size: 1rem;
+			}
+		}
+	}
+	&:hover {
+		transform: scale(1.02);
+	}
+}
+.Choose {
+	background-color: rgba(255, 166, 0, 0.178);
+
+	transition: all 0.25s;
+	& a div {
+		width: 80%;
+		background-color: #ffffff59;
+		transition: all 0.1s;
+	}
+	& a {
+		transition: all 0.25s;
+	}
+}
+.hiddenBtn {
+	position: absolute;
+	right: 1vw;
+	border-radius: 50%;
+	width: 4vw;
+	height: 4vw;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	transition: background-color 0.1s;
+}
+
+.removeBtn {
+	position: absolute;
+	right: 1vw;
+	border-radius: 50%;
+	width: 4vw;
+	height: 4vw;
+	border: none;
+	cursor: pointer;
+	background-color: rgb(223, 62, 62);
+	transition: background-color 0.3s 0.2s;
+	&:hover {
+		filter: brightness(1.1);
+		transition: all 0.25s;
+	}
+	&:active {
+		transform: scale(0.95);
+		transition: all 0.25s;
+	}
+}
