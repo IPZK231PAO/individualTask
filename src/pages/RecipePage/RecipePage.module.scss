@@ -165,7 +165,7 @@
 				position: relative;
 				font-size: 2.5rem;
 			}
-			& li:nth-child(2) {
+			& li:nth-child(n + 2) {
 				background-color: #2e9aa4;
 				color: #c50d04;
 			}
