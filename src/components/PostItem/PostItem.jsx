@@ -1,19 +1,12 @@
-import React, { useState } from 'react'
-import useStore from '../../store'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './PostItem.module.scss'
-import { SlClose } from "react-icons/sl";
-interface PostItemProps {
-	num: number;
-	post: any;
-	key: number;
-	remove?:any;
-}
+import { SlClose } from 'react-icons/sl'
 
-const PostItem = ({ num, post,remove }: PostItemProps) => {
+const PostItem = ({ num, post, remove }) => {
 	const [choose, setChoose] = useState(false)
-	
-	const toggleClass = (): void => {
+
+	const toggleClass = () => {
 		setChoose(!choose)
 	}
 
@@ -23,9 +16,7 @@ const PostItem = ({ num, post,remove }: PostItemProps) => {
 				e.preventDefault()
 				toggleClass()
 			}}
-			className={
-				  styles.PostItem +' '+ (choose ? styles.Choose : '')
-			}
+			className={styles.PostItem + ' ' + (choose ? styles.Choose : '')}
 		>
 			<NavLink to={`/${post.id}`}>
 				<img
@@ -45,9 +36,12 @@ const PostItem = ({ num, post,remove }: PostItemProps) => {
 			</NavLink>
 			<button
 				className={!choose ? styles.hiddenBtn : styles.removeBtn}
-				onClick={()=>{remove(post.id)}}
-			>	{<SlClose size={!choose?'0vw':'4vw'} />}
-				
+				onClick={() => {
+					remove(post.id)
+				}}
+			>
+				{' '}
+				{<SlClose size={!choose ? '0vw' : '4vw'} />}
 			</button>
 		</div>
 	)

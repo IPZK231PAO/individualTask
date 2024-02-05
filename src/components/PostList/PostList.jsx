@@ -1,14 +1,13 @@
-import { FC } from 'react'
 import PostItem from '../PostItem/PostItem'
 import useStore from '../../store'
 import styles from './PostList.module.scss'
-const PostList: FC = () => {
-	const data = useStore((state: any) => state.data)
-	const remove = useStore((state: any) => state.remove)
+const PostList = () => {
+	const data = useStore(state => state.data)
+	const remove = useStore(state => state.remove)
 
 	return (
 		<div className={styles.PostList}>
-			{data.map((post: any, index: number) => {
+			{data.map((post, index) => {
 				return (
 					<PostItem num={index + 1} post={post} key={post.id} remove={remove} />
 				)
