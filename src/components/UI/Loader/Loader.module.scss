@@ -1,16 +1,17 @@
-.loading{
-    width: 350px;
-    height:350px;
-    border-top: 10px solid rgba(0, 0, 0, 0.235);
-    border-left:10px solid rgba(0, 0, 0, 0.235);
-    border-radius: 50%;
-    animation: loading infinite 800ms linear;
+.loading {
+	width: 350px;
+	height: 350px;
+	border-top: 10px solid rgba(0, 0, 0, 0.235);
+	border-left: 10px solid rgba(0, 0, 0, 0.235);
+	border-radius: 50%;
+	animation: loading infinite 800ms linear;
+	margin: auto;
 }
 @keyframes loading {
-	0%{
-		 transform: rotate(0deg);
-	 }
-	 100%{
-		 transform: rotate(359deg);
-	 }
- }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
